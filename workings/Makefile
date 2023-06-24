@@ -26,6 +26,11 @@ migratedown:
 	@migrate -path $(SQL_MIGRATION_DIR) -database "$(POSTGRES_URL)" -verbose down
 .PHONY: migratedown
 
+# sqlc
+sqlc:
+	sqlc generate
+.PHONY: sqlc
+
 # docker
 docker-compose-core: docker-compose-core-stop docker-compose-core-start
 

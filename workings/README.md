@@ -4,8 +4,8 @@ Imitating an event-driven microservices coffee shop application.
 
 ## Dev notes
 
-- [doc flow](https://libraries.excalidraw.com/): Write pretty documentation (flow, design, infrastructure)
-- [sql migration](https://github.com/golang-migrate/migrate): Migrate db
+- [Doc flow](https://libraries.excalidraw.com/): Write pretty documentation (flow, design, infrastructure)
+- [Sql migration](https://github.com/golang-migrate/migrate): Migrate db
   - Questions: How about versions ?
   - How to use ?
     - generating migration
@@ -25,4 +25,10 @@ Imitating an event-driven microservices coffee shop application.
       ```bash
         make migratedown
       ```
+
+- [Generate sql-boilerplate by sqlc](https://github.com/kyleconroy/sqlc): Generate sql query and model for avoiding boilerplate
+  
+  ```bash
+    make sqlc
+  ```
       
