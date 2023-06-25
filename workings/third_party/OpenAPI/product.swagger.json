@@ -25,7 +25,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/productapiGetItemTypesResponse"
+              "$ref": "#/definitions/protoGetItemTypesResponse"
             }
           },
           "default": {
@@ -49,7 +49,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/productapiGetItemsByTypeResponse"
+              "$ref": "#/definitions/protoGetItemsByTypeResponse"
             }
           },
           "default": {
@@ -74,29 +74,29 @@
     }
   },
   "definitions": {
-    "productapiGetItemTypesResponse": {
+    "protoGetItemTypesResponse": {
       "type": "object",
       "properties": {
         "itemTypes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/productapiItemTypeDto"
+            "$ref": "#/definitions/protoItemTypeDto"
           }
         }
       }
     },
-    "productapiGetItemsByTypeResponse": {
+    "protoGetItemsByTypeResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/productapiItemDto"
+            "$ref": "#/definitions/protoItemDto"
           }
         }
       }
     },
-    "productapiItemDto": {
+    "protoItemDto": {
       "type": "object",
       "properties": {
         "price": {
@@ -109,7 +109,7 @@
         }
       }
     },
-    "productapiItemTypeDto": {
+    "protoItemTypeDto": {
       "type": "object",
       "properties": {
         "name": {

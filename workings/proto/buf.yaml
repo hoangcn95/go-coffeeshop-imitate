@@ -10,6 +10,8 @@ lint:
     - DEFAULT
   ignore_only:
     PACKAGE_DIRECTORY_MATCH:
+      - counter.proto
       - product.proto
     PACKAGE_VERSION_SUFFIX:
+      - counter.proto
       - product.proto
