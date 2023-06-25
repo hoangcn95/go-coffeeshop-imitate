@@ -42,6 +42,11 @@ bufgen:
 	buf generate
 .PHONY: bufgen
 
+# wire generate dependency injecttion
+wire:
+	cd internal/counter/app && wire && cd -
+.PHONY: wire
+
 # docker
 docker-compose-core: docker-compose-core-stop docker-compose-core-start
 

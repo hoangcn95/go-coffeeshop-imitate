@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/google/wire"
 	"github.com/pkg/errors"
 	"github.com/samber/lo"
 	"golang.org/x/exp/slog"
@@ -21,6 +22,10 @@ type orderService struct {
 	baristaEventPub  BaristaEventPublisher
 	kitchenEventPub  KitchenEventPublisher
 }
+
+var _ OrderService = (*orderService)(nil)
+
+var OrderServiceSet = wire.NewSet(NewOrderService)
 
 func NewOrderService(
 	orderRepo OrderRepo,
