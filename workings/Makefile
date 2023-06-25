@@ -31,6 +31,17 @@ sqlc:
 	sqlc generate
 .PHONY: sqlc
 
+# buf generator
+bufall: buflint bufgen
+
+buflint:
+	buf lint
+.PHONY: buflint
+
+bufgen:
+	buf generate
+.PHONY: bufgen
+
 # docker
 docker-compose-core: docker-compose-core-stop docker-compose-core-start
 

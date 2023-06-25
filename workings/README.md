@@ -31,4 +31,20 @@ Imitating an event-driven microservices coffee shop application.
   ```bash
     make sqlc
   ```
+
+- [buf](https://github.com/bufbuild/buf): gRPC generation for decreasing complexity of natural protoc-gen-go, besides that got benefits from versioning control
+
+  - buf installation
+    ```bash
+    brew install bufbuild/buf/buf
+    ```
+  
+  - buf lint and generate stuff
+    ```bash
+    make bufall
+    ```
+  
+  
+
+
       
