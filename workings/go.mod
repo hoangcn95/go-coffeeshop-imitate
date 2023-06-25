@@ -11,6 +11,8 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/rabbitmq/amqp091-go v1.8.1
 	github.com/samber/lo v1.38.1
+	github.com/sirupsen/logrus v1.9.2
+	go.uber.org/automaxprocs v1.5.2
 	golang.org/x/exp v0.0.0-20230315142452-642cacee5cc0
 	google.golang.org/genproto/googleapis/api v0.0.0-20230530153820-e85fd2cbaebc
 	google.golang.org/grpc v1.55.0

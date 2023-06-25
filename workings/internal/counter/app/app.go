@@ -19,17 +19,17 @@ import (
 )
 
 type App struct {
-	cfg           *config.Config
-	pgConn        postgres.DBEngine
-	amqpConn      *amqp.Connection
-	amqpPublisher pkgPublisher.EventPublisher
-	amqpConsumer  pkgConsumer.EventConsumer
+	Cfg       *config.Config
+	PG        postgres.DBEngine
+	AMQPConn  *amqp.Connection
+	Publisher pkgPublisher.EventPublisher
+	Consumer  pkgConsumer.EventConsumer
 
-	baristaOrderPub orderSvc.BaristaEventPublisher
-	kitchenOrderPub orderSvc.KitchenEventPublisher
+	BaristaOrderPub orderSvc.BaristaEventPublisher
+	KitchenOrderPub orderSvc.KitchenEventPublisher
 
-	productDomainSvc  grpc.ProductDomainService
-	orderService      orderSvc.OrderService
+	ProductDomainSvc  grpc.ProductDomainService
+	OrderService      orderSvc.OrderService
 	CounterGRPCServer gen.CounterServiceServer
 
 	baristaHandler events.BaristaOrderUpdatedEventHandler
@@ -53,18 +53,18 @@ func New(
 	kitchenHandler events.KitchenOrderUpdatedEventHandler,
 ) *App {
 	return &App{
-		cfg: cfg,
+		Cfg: cfg,
 
-		pgConn:        pg,
-		amqpConn:      amqpConn,
-		amqpPublisher: publisher,
-		amqpConsumer:  consumer,
+		PG:        pg,
+		AMQPConn:  amqpConn,
+		Publisher: publisher,
+		Consumer:  consumer,
 
-		baristaOrderPub: baristaOrderPub,
-		kitchenOrderPub: kitchenOrderPub,
+		BaristaOrderPub: baristaOrderPub,
+		KitchenOrderPub: kitchenOrderPub,
 
-		productDomainSvc:  productDomainSvc,
-		orderService:      orderService,
+		ProductDomainSvc:  productDomainSvc,
+		OrderService:      orderService,
 		CounterGRPCServer: counterGRPCServer,
 
 		baristaHandler: baristaHandler,
