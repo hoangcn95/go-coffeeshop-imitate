@@ -42,7 +42,7 @@ message OrderDto {
   int32                order_source      = 2;
   string               loyalty_member_id = 3;
   int32                order_status      = 4;
-  int32                localtion         = 5;
+  int32                location          = 5;
   repeated LineItemDto line_items        = 6;
 }
 

@@ -139,7 +139,7 @@
           "type": "integer",
           "format": "int32"
         },
-        "localtion": {
+        "location": {
           "type": "integer",
           "format": "int32"
         },
