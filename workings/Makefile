@@ -57,3 +57,9 @@ docker-compose-core-start:
 docker-compose-core-stop:
 	docker-compose -f docker-compose-core.yaml down --remove-orphans -v
 .PHONY: docker-compose-core-stop
+
+# run
+run-counter:
+	cd cmd/counter && go mod tidy && go mod download && \
+	CGO_ENABLED=0 go run github.com/hoangcn95/go-coffeeshop-imitate/workings/cmd/counter
+.PHONY: run-counter
