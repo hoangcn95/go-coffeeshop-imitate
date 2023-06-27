@@ -8,6 +8,7 @@ require (
 	github.com/google/wire v0.5.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.16.0
 	github.com/ilyakaznacheev/cleanenv v1.4.2
+	github.com/lib/pq v1.10.2
 	github.com/pkg/errors v0.9.1
 	github.com/rabbitmq/amqp091-go v1.8.1
 	github.com/samber/lo v1.38.1

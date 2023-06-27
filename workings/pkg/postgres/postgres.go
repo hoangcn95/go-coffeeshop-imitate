@@ -5,6 +5,7 @@ import (
 	"log"
 	"time"
 
+	_ "github.com/lib/pq"
 	"golang.org/x/exp/slog"
 )
 
@@ -32,20 +33,19 @@ func NewPostgresDB(url DBConnString) (DBEngine, error) {
 	var err error
 	for pg.connAttempts > 0 {
 		pg.db, err = sql.Open("postgres", string(url))
-		if err != nil {
-			break
+		if err == nil {
+			slog.Info("📰 connected to postgresdb 🎉")
+			return pg, nil
 		}
 
-		log.Printf("Postgres is trying to connect, attempts left: %d", pg.connAttempts)
+		log.Printf("Postgres is trying to connect, attempts left: %d, err: %v", pg.connAttempts, err)
 
 		time.Sleep(pg.connTimeout)
 
 		pg.connAttempts--
 	}
 
-	slog.Info("📰 connected to postgresdb 🎉")
-
-	return pg, nil
+	return nil, err
 }
 
 func (p *postgres) Configure(opts ...Option) DBEngine {
