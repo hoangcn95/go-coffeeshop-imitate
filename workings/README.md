@@ -44,7 +44,12 @@ Imitating an event-driven microservices coffee shop application.
     make bufall
     ```
   
-  
+## Technical debt
 
+- How to add logging and tracing ?
+- How to add observability (metric) ?
+- How to add unit + integration tests ?
+- [grpc] How to add retry mechanism in grpc_client for overcome hiccup network issues ?
+- [grpc] How to add circuit breaker for push up system reliability ?
 
       
