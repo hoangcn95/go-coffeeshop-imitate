@@ -51,5 +51,6 @@ Imitating an event-driven microservices coffee shop application.
 - How to add unit + integration tests ?
 - [grpc] How to add retry mechanism in grpc_client for overcome hiccup network issues ?
 - [grpc] How to add circuit breaker for push up system reliability ?
+- [buf] How to add versioning control for each change .proto interaction 
 
       

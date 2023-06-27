@@ -5,8 +5,9 @@ import (
 	"log"
 	"os"
 
-	configs "github.com/hoangcn95/go-coffeeshop-imitate/workings/pkg/config"
 	"github.com/ilyakaznacheev/cleanenv"
+
+	configs "github.com/hoangcn95/go-coffeeshop-imitate/workings/pkg/config"
 )
 
 type (

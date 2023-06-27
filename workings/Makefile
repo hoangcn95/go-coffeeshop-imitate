@@ -44,7 +44,8 @@ bufgen:
 
 # wire generate dependency injecttion
 wire:
-	cd internal/counter/app && wire && cd -
+	cd internal/counter/app && wire && cd - && \
+	cd internal/product/app && wire && cd -
 .PHONY: wire
 
 # docker
@@ -59,7 +60,14 @@ docker-compose-core-stop:
 .PHONY: docker-compose-core-stop
 
 # run
+run: run-product run-counter
+
 run-counter:
 	cd cmd/counter && go mod tidy && go mod download && \
 	CGO_ENABLED=0 go run github.com/hoangcn95/go-coffeeshop-imitate/workings/cmd/counter
 .PHONY: run-counter
+
+run-product:
+	cd cmd/product && go mod tidy && go mod download && \
+	CGO_ENABLED=0 go run github.com/hoangcn95/go-coffeeshop-imitate/workings/cmd/product
+.PHONY: run-product
